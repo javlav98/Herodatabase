@@ -1,11 +1,17 @@
-import React from 'react'
-import SuperheroSearch from './components/SuperheroSearch'
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import SuperheroSearch from './components/SuperheroSearch';
+import SuperheroResults from './components/SuperheroResults';
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <SuperheroSearch />
-      
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SuperheroSearch />} />
+        <Route path="results" element={<SuperheroResults />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
